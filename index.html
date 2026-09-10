@@ -50,8 +50,23 @@
       </div>
     </section>
 
+    <section class="card credentialCard">
+      <h2>🔐 Auditoria de credenciais fracas</h2>
+      <p>Analisa uma conta de teste localmente. Nenhuma senha é enviada para a rede e não há tentativa automática de login.</p>
+      <div class="credentialGrid">
+        <label>Usuário de teste<input id="auditUser" autocomplete="off" placeholder="ex.: admin-teste"></label>
+        <label>Senha de teste<input id="auditPass" type="password" autocomplete="new-password" placeholder="Digite a senha para avaliar"></label>
+      </div>
+      <div class="actions">
+        <button id="auditBtn" class="primary">🛡️ AUDITAR CREDENCIAL</button>
+        <button id="clearAuditBtn" class="secondary">Limpar</button>
+      </div>
+      <div id="auditResult" class="auditResult empty">Nenhuma auditoria realizada.</div>
+    </section>
+
     <footer>Use somente em redes e equipamentos que você administra ou tem autorização para testar.</footer>
   </main>
+  <script src="credential-audit.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
