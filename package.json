@@ -1,0 +1,1 @@
+{"name":"ip-network-scanner","version":"1.0.0","private":true,"description":"Scanner de hosts e portas para redes autorizadas","main":"server.js","scripts":{"start":"node server.js"},"engines":{"node":">=18"}}
