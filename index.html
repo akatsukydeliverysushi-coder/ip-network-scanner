@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Scanner de Rede IP</title>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <h1>🔎 Scanner de Rede IP</h1>
+        <p>Verifique hosts e portas da sua rede local.</p>
+      </div>
+      <button id="installBtn" class="secondary hidden">📲 Instalar</button>
+    </header>
+
+    <section class="card">
+      <h2>Configuração do scan</h2>
+      <div class="grid">
+        <label>IP inicial<input id="ipStart" value="192.168.0.1" placeholder="192.168.0.1"></label>
+        <label>IP final<input id="ipEnd" value="192.168.0.254" placeholder="192.168.0.254"></label>
+        <label>Porta inicial<input id="portStart" type="number" value="1" min="1" max="65535"></label>
+        <label>Porta final<input id="portEnd" type="number" value="1024" min="1" max="65535"></label>
+        <label>Timeout (ms)<input id="timeout" type="number" value="500" min="100" max="5000"></label>
+      </div>
+      <div class="actions">
+        <button id="startBtn" class="primary">▶ INICIAR SCAN</button>
+        <button id="stopBtn" class="danger" disabled>■ PARAR</button>
+      </div>
+      <div id="status" class="status">Pronto para iniciar.</div>
+    </section>
+
+    <section class="stats">
+      <div><strong id="ips">0</strong><span>IPs encontrados</span></div>
+      <div><strong id="openPorts">0</strong><span>Portas abertas</span></div>
+      <div><strong id="tested">0</strong><span>Testes realizados</span></div>
+    </section>
+
+    <section class="card results">
+      <div class="resultHead"><h2>Resultados</h2><button id="exportBtn" class="secondary">⬇ Exportar CSV</button></div>
+      <div class="tableWrap">
+        <table>
+          <thead><tr><th>IP</th><th>Porta</th><th>Status</th><th>Tempo</th></tr></thead>
+          <tbody id="resultsBody"><tr><td colspan="4" class="empty">Nenhum resultado ainda.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>Use somente em redes e equipamentos que você administra ou tem autorização para testar.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
